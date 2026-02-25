@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="flex gap-4 justify-center">
+  {% if not user.is_authenticated %}
+    <a href="{% url 'register' %}" 
+       class="bg-white text-blue-700 px-8 py-3 rounded-xl font-bold hover:shadow-xl transition transform hover:-translate-y-1">
+      Get Started
+    </a>
+    <a href="{% url 'parking_list' %}" 
+       class="border-2 border-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-blue-700 transition">
+      Browse Lots
+    </a>
+  {% elif user.role == 'CUSTOMER' %}
+    <a href="{% url 'parking_list' %}" 
+       class="bg-white text-blue-700 px-8 py-3 rounded-xl font-bold hover:shadow-xl transition transform hover:-translate-y-1">
+      🔍 Find Parking
+    </a>
+    <a href="{% url 'customer_dashboard' %}" 
+       class="border-2 border-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-blue-700 transition">
+      My Bookings
+    </a>
+  {% else %}
+    <a href="{% url 'dashboard' %}" 
+       class="bg-white text-blue-700 px-8 py-3 rounded-xl font-bold hover:shadow-xl transition transform hover:-translate-y-1">
+      Go to Dashboard
+    </a>
+  {% endif %}
+</div>
+{% endblock %}
