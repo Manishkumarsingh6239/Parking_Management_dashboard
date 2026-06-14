@@ -1,6 +1,4 @@
-﻿# Parking_Management_dashboard
-
-# 🅿 ParkEase — Vibrant Parking Management System
+﻿# 🅿 ParkEase — Vibrant Parking Management System
 
 A full-stack web application for managing parking lots, slots, reservations, and payments — built with **Django**, **Django REST Framework**, **SQLite**, and **Tailwind CSS**.
 
